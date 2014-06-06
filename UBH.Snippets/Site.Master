@@ -1,0 +1,62 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="UBH.Snippets.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="iLogo">
+                <img alt="UBHiLogo" src="images/UBHDoor57x57.jpg"/>
+            </div>
+            <div class="title">
+                <h1>
+                    UBH Test Application
+                </h1>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem Text="Item1" Selectable="False" Value="Item1">
+                            <asp:MenuItem NavigateUrl="~/TestPage1.aspx" Text="Test Page 1" 
+                                Value="Test Page 1"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Item2" Selectable="False" Value="Item2">
+                            <asp:MenuItem NavigateUrl="~/TestPage2.aspx" Text="Test Page 2" 
+                                Value="Test Page 2"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Item3" Selectable="False" Value="Item3">
+                            <asp:MenuItem NavigateUrl="~/TestPage3.aspx" Text="Test Page 3" 
+                                Value="Test Page 3"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Help" Selectable="false" Value="Help">
+                            <asp:MenuItem Text="About" Value="About" NavigateUrl="~/About.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        
+        <div class="clear">
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>
+            &copy; United-Bilt Homes
+        </p>
+    </div>
+    </form>
+</body>
+</html>
